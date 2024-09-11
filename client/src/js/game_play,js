@@ -1,0 +1,23 @@
+document.getElementById('gridSizeForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    // Get form values
+    const gridSize = document.getElementById('gridSize').value;
+
+    // Submit grid size and redirect to the game board
+    try {
+        const response = await fetch('/api/create_game', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ grid_size: gridSize })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            window.location.href = `/game/${data.game_id}`;
+        } else {
+            alert('Error creating game. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error during game creation:', error);
+    }
+});

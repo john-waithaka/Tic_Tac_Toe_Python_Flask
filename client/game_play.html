@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Tic Tac Toe</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Select Grid Size</h1>
+        <form id="gridSizeForm">
+            <label for="gridSize">Grid Size</label>
+            <select id="gridSize" name="gridSize" required>
+                <option value="3">3x3</option>
+                <option value="4">4x4</option>
+                <option value="5">5x5</option>
+                <option value="6">6x6</option>
+                <option value="7">7x7</option>
+                <option value="8">8x8</option>
+            </select>
+
+            <button type="submit">Start Game</button>
+        </form>
+
+        <!-- Link to return to index page -->
+        <a href="/index.html">Back to Home</a>
+    </div>
+
+    <!-- Linking game_play.js for any scripts -->
+    <script type="module" src="/src/js/game_play.js"></script>
+</body>
+</html>
